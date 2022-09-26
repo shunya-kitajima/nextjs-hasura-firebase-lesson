@@ -4,7 +4,7 @@ export interface News {
   created_at: string
 }
 
-export interface EditedNews {
+export interface EditNews {
   id: string
   content: string
 }
@@ -16,7 +16,7 @@ export interface Task {
   user_id: string
 }
 
-export interface EditedTask {
+export interface EditTask {
   id: string
   title: string
 }
