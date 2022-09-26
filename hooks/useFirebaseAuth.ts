@@ -44,10 +44,10 @@ export const useFirebaseAuth = () => {
   return {
     email,
     password,
+    isLogin,
     emailChange,
     pwChange,
     resetInput,
-    isLogin,
     toggleMode,
     authUser,
   }
