@@ -40,3 +40,5 @@ export const NewsItem: React.FC<Props> = ({ news }) => {
     </li>
   )
 }
+
+export const NewsItemMemo = memo(NewsItem)
