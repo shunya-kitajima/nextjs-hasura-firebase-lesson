@@ -9,7 +9,7 @@ interface Props {
   news: News
 }
 
-export const NewsItem: React.FC<Props> = ({ news }) => {
+const NewsItem: React.FC<Props> = ({ news }) => {
   const dispatch = useDispatch()
   const { deleteNewsMutation } = useAppMutate()
 

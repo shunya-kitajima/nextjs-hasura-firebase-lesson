@@ -2,7 +2,7 @@ import React, { memo } from 'react'
 import { useQueryNews } from '../hooks/useQueryNews'
 import { NewsItemMemo } from './NewsItem'
 
-export const NewsList: React.FC = () => {
+const NewsList: React.FC = () => {
   const { status, data } = useQueryNews()
 
   if (status === 'loading') return <div>{'Loading...'}</div>
