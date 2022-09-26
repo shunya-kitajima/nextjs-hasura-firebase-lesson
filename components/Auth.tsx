@@ -1,7 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import { ChevronDoubleRightIcon } from '@heroicons/react/20/solid'
-import { ArrowsUpDownIcon } from '@heroicons/react/20/solid'
+import {
+  ChevronDoubleRightIcon,
+  ArrowsUpDownIcon,
+} from '@heroicons/react/20/solid'
 import firebase from '../firebaseConfig'
 import { useFirebaseAuth } from '../hooks/useFirebaseAuth'
 
