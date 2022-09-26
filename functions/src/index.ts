@@ -5,7 +5,7 @@ admin.initializeApp()
 
 export const setCustomClaims = functions.auth.user().onCreate(async (user) => {
   const customClaims = {
-    'http://hasura.io/jwt/claims': {
+    'https://hasura.io/jwt/claims': {
       'x-hasura-default-role': 'staff',
       'x-hasura-allowed-roles': ['staff'],
       'x-hasura-user-id': user.uid,
