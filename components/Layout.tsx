@@ -26,9 +26,7 @@ export const Layout: React.FC<Props> = ({
           rel="noopener noreferrer"
         >
           Powered by{' '}
-          <span className="h-4 ml-2">
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
+          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </a>
       </footer>
     </div>
