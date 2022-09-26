@@ -8,7 +8,7 @@ export let unSubMeta: () => void
 export const useUserChanged = () => {
   const cookie = new Cookie()
   const router = useRouter()
-  const HASURA_TOKEN_KEY = 'http://hasura.io/jwt/claims'
+  const HASURA_TOKEN_KEY = 'https://hasura.io/jwt/claims'
 
   useEffect(() => {
     const unSubUser = firebase.auth().onAuthStateChanged(async (user) => {
