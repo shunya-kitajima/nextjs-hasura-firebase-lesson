@@ -152,5 +152,12 @@ export const useAppMutate = () => {
     }
   )
 
-  return {}
+  return {
+    createNewsMutation,
+    updateNewsMutation,
+    deleteNewsMutation,
+    createTaskMutation,
+    updateTaskMutation,
+    deleteTaskMutation,
+  }
 }
