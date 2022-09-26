@@ -17,7 +17,9 @@ export const Layout: React.FC<Props> = ({
         <title>{title}</title>
       </Head>
       <header></header>
-      <main>{children}</main>
+      <main className="flex flex-1 flex-col justify-center items-center w-screen">
+        {children}
+      </main>
       <footer className="w-full h-12 flex justify-center items-center border-t">
         <a
           className="flex items-center"

@@ -44,19 +44,19 @@ export const Auth: React.FC = () => {
         <button
           disabled={!email || !password}
           type="submit"
-          className="disabled:opacity-40 mt-5 py-1 px-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded foucus:outline-none"
+          className="disabled:opacity-40 mt-5 py-1 px-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded focus:outline-none"
         >
           {isLogin ? 'Login' : 'Register'}
         </button>
       </form>
       <ArrowsUpDownIcon
-        className="my-5 h-5 text-blue-500 cursor-pointer"
+        className="my-5 h-5 w-5 text-blue-500 cursor-pointer"
         onClick={toggleMode}
       />
       {user && (
         <Link href="/tasks">
           <div className="flex items-center cursor-pointer my-3">
-            <ChevronDoubleRightIcon className="h-5 w-5 mx-1 text-blue" />
+            <ChevronDoubleRightIcon className="h-5 w-5 mx-1 text-blue-500" />
             <span>to task page</span>
           </div>
         </Link>
