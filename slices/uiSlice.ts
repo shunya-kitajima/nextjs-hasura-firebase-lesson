@@ -44,4 +44,7 @@ export const {
   resetEditedTask,
 } = uiSlice.actions
 
+export const selectNews = (state: RootState) => state.ui.editedNews
+export const selectTask = (state: RootState) => state.ui.editedTask
+
 export default uiSlice.reducer
