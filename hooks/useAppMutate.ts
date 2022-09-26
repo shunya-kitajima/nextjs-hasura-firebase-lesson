@@ -51,6 +51,45 @@ export const useAppMutate = () => {
       },
     }
   )
+  const updateNewsMutation = useMutation(
+    (news: EditNews) => graphQLClient.request(UPDATE_NEWS, news),
+    {
+      onSuccess: (res, variables) => {
+        const previousNews = queryClient.getQueryData<News[]>('news')
+        if (previousNews) {
+          queryClient.setQueryData(
+            'news',
+            previousNews.map((news) =>
+              news.id === variables.id ? res.update_news_by_pk : news
+            )
+          )
+        }
+        dispatch(resetEditedNews())
+      },
+      onError: (err: any) => {
+        alert(err.message)
+        dispatch(resetEditedNews())
+      },
+    }
+  )
+  const deleteNewsMutation = useMutation(
+    (id: string) => graphQLClient.request(DELETE_NEWS, { id: id }),
+    {
+      onSuccess: (res, variables) => {
+        const previousNews = queryClient.getQueryData<News[]>('news')
+        if (previousNews) {
+          queryClient.setQueryData(
+            'news',
+            previousNews.filter((news) => news.id !== variables)
+          )
+        }
+      },
+      onError: (err: any) => {
+        alert(err.message)
+        dispatch(resetEditedNews())
+      },
+    }
+  )
 
   const createTaskMutation = useMutation(
     (title: string) => graphQLClient.request(CREATE_TASK, { title: title }),
