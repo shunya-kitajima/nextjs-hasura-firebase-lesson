@@ -83,6 +83,7 @@ export const useAppMutate = () => {
             previousNews.filter((news) => news.id !== variables)
           )
         }
+        dispatch(resetEditedNews())
       },
       onError: (err: any) => {
         alert(err.message)
