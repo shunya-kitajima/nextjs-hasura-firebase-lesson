@@ -6,7 +6,7 @@ import { Task } from '../types/types'
 import { GET_TASKS } from '../queries/queries'
 
 const cookie = new Cookie()
-const endpoint = process.env.NEXT_PUBLIC_HASURA_ENDPOINT
+const endpoint = process.env.NEXT_PUBLIC_HASURA_ENDPOINT as string
 let graphqlClient: GraphQLClient
 
 interface TasksRes {
@@ -25,6 +25,7 @@ export const useQueryTasks = () => {
         Authorization: `Bearer ${cookie.get('token')}`,
       },
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cookie.get('token')])
 
   return useQuery<Task[], Error>({

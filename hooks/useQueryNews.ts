@@ -7,11 +7,10 @@ interface NewsRes {
   news: News[]
 }
 
+const endpoint = process.env.NEXT_PUBLIC_HASURA_ENDPOINT as string
+
 export const fetchNews = async () => {
-  const { news: data } = await request<NewsRes>(
-    process.env.NEXT_PUBLIC_HASURA_ENDPOINT,
-    GET_NEWS
-  )
+  const { news: data } = await request<NewsRes>(endpoint, GET_NEWS)
   return data
 }
 
