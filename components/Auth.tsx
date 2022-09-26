@@ -57,7 +57,7 @@ export const Auth: React.FC = () => {
         <Link href="/tasks">
           <div className="flex items-center cursor-pointer my-3">
             <ChevronDoubleRightIcon className="h-5 w-5 mx-1 text-blue-500" />
-            <span>to task page</span>
+            <span>to tasks page</span>
           </div>
         </Link>
       )}
