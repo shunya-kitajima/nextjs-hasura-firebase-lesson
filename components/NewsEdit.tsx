@@ -31,7 +31,7 @@ const NewsEdit: React.FC = () => {
         />
         <button
           className="disabled:opacity-40 my-3 mx-3 py-2 px-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded"
-          disabled={!editedNews.id}
+          disabled={!editedNews.content}
         >
           {editedNews.id === '' ? 'Create' : 'Update'}
         </button>
