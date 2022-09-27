@@ -124,7 +124,7 @@ export const useAppMutate = () => {
             )
           )
         }
-        dispatch(resetEditedTask)
+        dispatch(resetEditedTask())
       },
       onError: (err: any) => {
         alert(err.message)
