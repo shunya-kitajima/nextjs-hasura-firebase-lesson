@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useAppMutate } from '../hooks/useAppMutate'
 import { setEditedTask, selectTask } from '../slices/uiSlice'
 
-export const TaskEdit: React.FC = () => {
+const TaskEdit: React.FC = () => {
   const dispatch = useDispatch()
   const editedTask = useSelector(selectTask)
   const { createTaskMutation, updateTaskMutation } = useAppMutate()
