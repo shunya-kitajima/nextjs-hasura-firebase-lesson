@@ -14,6 +14,7 @@ const NewsItem: React.FC<Props> = ({ news }) => {
   const { deleteNewsMutation } = useAppMutate()
 
   if (deleteNewsMutation.isLoading) return <p>Deleting...</p>
+  if (deleteNewsMutation.error) return <p>Error</p>
 
   return (
     <li className="my-3">

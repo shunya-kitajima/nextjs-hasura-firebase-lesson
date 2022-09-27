@@ -14,6 +14,7 @@ const TaskItem: React.FC<Props> = ({ task }) => {
   const { deleteTaskMutation } = useAppMutate()
 
   if (deleteTaskMutation.isLoading) return <p>Deleting...</p>
+  if (deleteTaskMutation.error) return <p>Error</p>
 
   return (
     <li className="my-3">

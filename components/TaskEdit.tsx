@@ -17,6 +17,9 @@ const TaskEdit: React.FC = () => {
     }
   }
 
+  if (createTaskMutation.error || updateTaskMutation.error)
+    return <div>{'Error'}</div>
+
   return (
     <div>
       <form onSubmit={submitHandler}>
