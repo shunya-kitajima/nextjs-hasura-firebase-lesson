@@ -29,7 +29,15 @@ const NewsEdit: React.FC = () => {
             dispatch(setEditedNews({ ...editedNews, content: e.target.value }))
           }
         />
+        <button
+          className="disabled:opacity-40 my-3 mx-3 py-2 px-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded"
+          disabled={!editedNews.id}
+        >
+          {editedNews.id === '' ? 'Create' : 'Update'}
+        </button>
       </form>
     </div>
   )
 }
+
+export const NewsEditMemo = memo(NewsEdit)
