@@ -29,7 +29,16 @@ export const TaskEdit: React.FC = () => {
             dispatch(setEditedTask({ ...editedTask, title: e.target.value }))
           }
         />
+        <button
+          className="disabled:opacity-40 my-3 mx-3 py-2 px-3 text-white bg-indigo-600 hover:bg-indigo-700 rounded"
+          disabled={!editedTask.title}
+          type="submit"
+        >
+          {editedTask.id === '' ? 'Create' : 'Update'}
+        </button>
       </form>
     </div>
   )
 }
+
+export const TaskEditMemo = memo(TaskEdit)
