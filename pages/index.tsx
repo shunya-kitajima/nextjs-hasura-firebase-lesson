@@ -18,8 +18,17 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Home: NextPage = () => {
+  const queryClient = useQueryClient()
+  const data = queryClient.getQueryData<News[]>('news')
+
   return (
     <Layout title="Home">
+      <p className="mb-5 text-blue-500 text-xl">News list by SSG</p>
+      {data?.map((news) => (
+        <p className="font-bold" key={news.id}>
+          {news.content}
+        </p>
+      ))}
       <Auth />
     </Layout>
   )
