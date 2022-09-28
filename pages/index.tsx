@@ -12,7 +12,7 @@ export const getStaticProps: GetStaticProps = async () => {
   await queryClient.prefetchQuery('news', fetchNews)
   return {
     props: {
-      dehydrate: dehydrate(queryClient),
+      dehydratedState: dehydrate(queryClient),
     },
   }
 }
