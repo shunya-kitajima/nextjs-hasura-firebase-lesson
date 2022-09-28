@@ -3,12 +3,15 @@ import { useState } from 'react'
 import type { AppProps } from 'next/app'
 import { Provider } from 'react-redux'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { Hydrate } from 'react-query/hydration'
+import { Hydrate, DehydratedState } from 'react-query/hydration'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { useUserChanged } from '../hooks/useUserChanged'
 import { store } from '../app/store'
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({
+  Component,
+  pageProps,
+}: AppProps<{ dehydratedState: DehydratedState }>) => {
   const {} = useUserChanged()
   const [queryClient] = useState(
     () =>
